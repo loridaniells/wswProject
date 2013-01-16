@@ -1,0 +1,12 @@
+/*CSS from the book*/
+
+/*creating custom icons*/
+.ui-icon-custom-sams {
+  background-image: url("../images/custom-icon-sams.png")
+}
+
+/*creating custom hd icons*/
+.ui-icon-custom-sams {
+  background-image: url("../images/custom-icon-sams-hd.png")
+  background-size: 18px 18px;
+}
