@@ -1,0 +1,298 @@
+/*CSS styles*/
+@font-face {
+    font-family: 'CandalRegular';
+    src: url('/fonts/Candal-webfont.eot');
+    src: url('/fonts/Candal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Candal-webfont.woff') format('woff'),
+         url('/fonts/Candal-webfont.ttf') format('truetype'),
+         url('/fonts/Candal-webfont.svg#CandalRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	font-family: Times, serif;  
+    font-size: 1.0em;  
+    font-weight: normal;     
+    line-height: 110%;  
+    color: #3c3c3c;
+    background-color: #d7d7d7;
+    text-decoration: none;
+    background: url('../images/gray_jean.png') repeat center center scroll;
+    
+}
+
+li, a {
+	text-decoration: none;
+}
+
+.clearfix{
+	clear: both;
+}
+ 
+#wrapper {						/*div containing all elements inside the body */
+    width: 98%;
+    margin: 0 auto;
+    float: left;/*Floating the container makes it stretch down to the height of the tallest column inside*/
+    -moz-box-shadow: 2px 3px 1px 3px #555;
+    -webkit-box-shadow: 2px 3px 1px 3px #555;
+ 	box-shadow: 2px 3px 1px 3px #555;
+ 	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+	border-radius: 10px; 
+	-khtml-border-radius: 10px;
+
+}
+
+
+#logo {
+	float: left;
+}
+
+#maintitle {
+	font-size: 4.2em;
+	margin-top: 4%;
+	line-height: 110%;
+	text-align: center;
+	color: #8C836E;
+	font-family: Times, serif;
+}
+
+#logo img {
+	border: 1px solid #1f285f;
+    -moz-box-shadow: 2px 3px 1px 1px #555;
+    -webkit-box-shadow: 2px 3px 1px 1px #555;
+ 	box-shadow: 2px 3px 1px 1px #555;
+ 	margin-top: -50px;
+}
+
+header {					/*top/main header*/
+	padding: 2%;
+	height: 150px;
+	background-color: #999;
+    -moz-box-shadow: 2px 3px 1px 3px #555;
+    -webkit-box-shadow: 2px 3px 1px 3px #555;
+ 	box-shadow: 2px 3px 1px 3px #555;
+ 	-moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px; 
+	-khtml-border-radius: 10px 10px 0px 0px;
+	background: url('../images/grid.png') repeat center center scroll;
+}
+
+header a:link, :visited {
+    color: #666; /* blue #0157ac*/
+	text-shadow: 1px 2px 1px #222;
+}
+
+header h1 {
+	margin-top: 0;
+	
+
+}
+#container1 {/*nav background color (left column). parent div to the nav, section and aside elements*/
+	/*this div lays on top of containers 2 and 3 because it is floated*/
+	float: left;
+	position: relative;/*relative to its parent div (#container2)*/
+	right: 48%;/*move this container to the left. */
+	background-color: rgba(245, 223, 127, .9); /*rgba(255, 215, 11, .9);yellow*/
+	border-right: 2px inset #666;
+	border-bottom: 2px inset #666;
+}
+
+#container2 {/*main content background color (middle column)*/
+	/*this container is parent to and lays under container 1 when floated */
+	float: left;
+	position: relative;/*relative to its parent (#container3)*/
+	right: 26%;
+	background-color: rgba(250, 200, 115, .9); /*rgba(253, 175, 51, .9);orange*/
+	border-right: 2px inset #666;
+	border-bottom: 2px inset #666;
+}
+
+#container3 { /*aside background color (right column). parent to containers 1 & 2 */
+	float: left;
+	top: 5px;
+	width: 100%;
+	background-color: rgba(245, 223, 127, .9);/* rgba(255, 215, 11, .9);yellow*/
+	overflow: hidden;
+    position: relative;/*position:relative; on container3, this is to solve an Internet Explorer bug that stops the overflow:hidden; from working.*/
+	border-bottom: 2px inset #666;
+}
+
+nav {							/*nested in the main header*/
+	width: 21%;
+	padding-top: 2%;
+	margin-top: 2px;
+	float: left;
+	position: relative;/*to enable positioning inside the containing div of #container1*/
+	left: 76%;/*move nav content to the left col*/
+	overflow: hidden;
+}
+
+nav a:link { color: #0088cc;  }
+nav a:visited { color: #0088cc; }
+nav a:hover { font-style: italic; color: purple; }
+nav a:active { color: #a0d100;}
+
+nav li {/*to have second line of li line up with the line above 'indent'. this is for hours 1 - 9*/
+	margin-left: 1.5em;
+	text-indent: -3.6em;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+nav li.double { /*to have second line of li line up with the line above 'indent'. this is for hours 10 - 24*/
+	margin-left: 2em;
+	text-indent: -4.1em;
+}
+
+.intro {/*home page the introduction to the book*/
+	margin-left: 22%;
+}
+
+.navtext {
+	color: #444;
+	font-weight: bold;
+}
+
+nav h1 {
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	color: #333;
+	font-family: arial, "sans-serif";
+}
+
+section {	/*main content area*/
+	width: 42%;	/**/
+	padding-top: 2%;
+	margin-top: 2px;
+	color: #444; 	
+	float: left;
+	position: relative;/*make the section element position relative to its parent div #container1*/
+	left: 82%; 	/*move the main content to the center of the page*/	
+	overflow: hidden;
+}
+
+section p {/*to bring font size up to 15.6px to match the nav link text size*/
+	font-size: 1.2em;
+}
+
+section h1 {
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	color: #333;
+	font-family: arial, "sans-serif";
+	line-height: 1em;
+}
+
+section h2 {
+	font-family: 'CandalRegular','sans-serif',arial;
+	line-height: 1.0em;
+}
+
+.large {		/*Book title larger font sections*/
+	font-size: 1.2em;
+}
+
+.small { /*Sams, Teach Yourself, in*/
+	font-size: .9em;
+}
+
+.blue {/*Teach Yourself, jQuery, Hours*/
+	color: #0058ac;
+}
+
+.red {/*24*/
+	color: red;
+}
+
+.light { /*Sams, in*/	
+	color: #0058ac;
+	font-weight: 100;
+}
+
+dark {
+	color: #1f285f;  /*title of book*/
+}
+
+
+aside a:link {color: #0058ac;}
+aside a:visited {color: orange;}
+aside a:hover {font-style: italic; color: purple;}
+aside a:active {color: #a0d100;}
+
+aside {
+	width: 21%;
+	float: left;
+	padding-top: 2%;
+	margin-top: 2px;	
+	position: relative;/*make the section element position relative to its parent div #container1*/
+	left: 88%; 	/*was 72%  move the main content to the center of the page*/
+	overflow: hidden;
+}
+
+aside li {
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+a{
+	font-family: arial, "sans-serif";
+}
+
+aside h1 {
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	color: #333;
+	font-family: arial, "sans-serif";
+	line-height: 1.0em;
+}
+.row {
+	 /*for auto height adjusments*/
+}
+.col {
+	 /*for auto height adjusments*/
+}
+footer{
+	padding: 1% 0 1% 2%;
+	background: url('../images/grid.png') repeat center center scroll;
+}
+
+footer p {
+	color: #333;
+	width: 80%;
+}
+
+footer a {
+	color: #333;
+} 
+
+
+/*@media only screen and (min-width: 768px) {  DID NOT PASS CSS VALIDATION - COMMENTED OUT FOR NOW.
+     
+    header{
+        float:;
+    }
+ 
+    nav{
+        float:;
+        width:;
+    }
+  
+    article{
+        float:;
+        width:;
+    }
+ 
+    aside{
+        float:right;
+        width:;
+    }
+    
+}*/
+@media only screen and (min-width: 1140px) {
+  
+    .wrapper{
+        width:1026px; /* 1140px - 10% for margins */
+        margin:0 auto;
+    }
+}
