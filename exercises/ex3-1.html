@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><!--Resource:  http://arukor.com/About/ArukorPartners/jQueryJam.aspx-->
+	<head>
+        <title>jQuery Mobile Class Exercises Hour 3: Exercise 1 mouseenter() and mouseleave() functions</title>
+        <meta charset="utf-8"> 
+        <meta name="description" content="Sams Teach Yourself jQuery Mobile in 24 Hours - Hour 3 Exercise 1, Mouseenter &amp: Mouseleave">
+		<meta name="author" content="Lori Daniells">      
+        <style rel="stylesheet" type="text/css">
+			body {
+				margin: 0 auto;
+				padding: 0;
+			}
+        	#green {
+        		position: absolute;
+        	}
+        	
+        	#orange {
+        		position: absolute;
+        	}  
+        	
+        	.enterleave {
+        		margin-left: 0px;
+        		width: 100%;
+        		height: 100px;
+        		margin: 0 auto;		
+        	}
+        	
+        	h1 {
+        		width: 100%;
+        		margin: 0 auto;
+        	} 
+        	    
+        </style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Mouseenter and Mouseleave - Hour 3</h1><br />
+			<div class="enterleave ">
+				<img id="green" src="../images/mouseenter.png" alt="green flower" title="Green Flower">
+    			<img id="orange" src="../images/mouseleave.png" alt="orange flower" title="Orange Flower">
+				<!--by listing the orange flower last in document. i didn't have to hide it in order to start out with an orange flower-->
+			<!--Something i couldn't solve, part of the image shows the transition from one image to the next in the far left side of browser window.-->
+			</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>	
+		<script>//this is one option that works.		    
+		    $(document).ready(function () {	
+				$("div.enterleave").mouseenter(function() {
+					$("#green").show('slow', function() { 
+						$("#orange").hide();
+					});	
+				});				
+				$("div.enterleave").mouseleave(function() {
+					$("#orange").show('slow', function() {
+						$("#green").hide();
+					});
+									
+				});
+
+		    });
+		    //another option that works.
+		   /* $(document).ready(function () {	
+		    	
+				$("div.enterleave").mouseenter(function() {
+					$("#green").show('slow', function() { 
+						$("#orange").hide()}).mouseleave(function() {//closed function here in order to chain mouse leave function
+							$("#orange").show('slow', function() {
+								$("#green").hide();
+								
+						    });
+					    });
+									
+				});
+		    });*/
+		</script>
+		<script>
+
+    			/*$("div.enterleave").mouseenter(function () {
+        			$("p:first", this).text("mouse enter");
+   					}).mouseleave(function () {
+        				$("p:first", this).text("mouse leave");
+    			});*/
+
+		</script>
+		</div>
+	</body>
+</html>

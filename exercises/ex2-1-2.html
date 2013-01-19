@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">	
+		<meta name="viewport" content="width=device-width"/> 
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Chapter 2, Exercise 1 &amp; 2 - Javascript Click Event</title>
+		<meta name="description" content="Sams Teach Yourself jQuery Mobile in 24 Hours - Hour 2 Exercise 1 &amp; 2, JavaScript click event">
+		<meta name="author" content="Lori Daniells">
+		<style type="text/css">
+
+			body {
+				font-family: Times, serif;  
+    			font-size: 1.2em;  
+    			font-weight: normal;    
+    			font-style: normal;  
+    			line-height: 110%;  
+    			color: #3c3c3c;
+				background-color: #999;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  				
+
+			}
+    
+    		#wrapper {
+    			background-color: #fffde6;
+    			width: 60%;
+    			margin: 20px auto;
+    			padding: 10px 2%;
+    			-moz-box-shadow: 2px 3px 1px 3px #555;
+  				-webkit-box-shadow: 2px 3px 1px 3px #555;
+ 				 box-shadow: 2px 3px 1px 3px #555;
+ 				 -moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px; 
+				-khtml-border-radius: 10px; 
+    		}
+    		
+			.green {
+    			font-family: Arial, Helvetica, sans-serif;  
+    			font-size: 1.1em;  
+    			font-weight: bold;   
+    			font-style: italic;  
+    			line-height: 110%;  
+    			color: green;
+			}
+			
+			.orange {
+				color: orange;
+			}
+			
+			button {
+    			height: 28px;
+    			/*background-image: url('../images/button.png');*/
+    			/*background-color: transparent;*/
+    			/*border: 0px none #ff0000;*/
+    			cursor: hand;
+    			font-family: Myriad Pro, Helvetica;
+    			font-weight: bold;
+    			font-size: 1.1em;
+    			color: green;
+			}
+		
+		</style>
+	</head>
+	<body>
+	  <div id="wrapper">
+		<header id="header">
+			<h1 id="logo">JQuery jAM, Hour 2 - Exercise 1 &amp; 2</h1>
+		</header>	
+	    <section>
+			<h1>When to Use <span class="orange">&lt;section&gt;</span> Tag</h1>
+			<div>
+				<p id="change">The <span class="orange">&lt;section&gt;</span> tag:  Use to group thematically-related content. It should not be used as a div element as a div is not semantic but more for styling. Always ask yourself, <q>Is all of the content related?</q> Source: http://stackoverflow.com/questions/4781077/html5-best-practices-section-header-aside-article-tags</p><br />
+				<button id="button" type="button">Click here to change the font!</button>
+				
+				<p>99% of the time a section element will have an h1 tag. Here is a tool for checking your markup: <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML</abbr>5 outiner tool</a> This tool will notify you if you have a section that requires a h1 tag.</p>
+				<p>The section element is not a generic container element. When an element is needed for styling purposes or as a convenience for scripting, authors are encouraged to use the div element instead. Source:  http://html5doctor.com/the-section-element/</p>
+				<p>The W3C states: <blockquote>Examples of sections would be chapters, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. A Web site's home page could be split into sections for an introduction, news items, and contact information.</blockquote></p>
+				<p>Additional reference: <a href="http://www.anthonycalzadilla.com/2010/08/html5-section-aside-header-nav-footer-elements-not-as-obvious-as-they-sound/">HTML5 Tags Explained</a></p>
+				
+			</div>
+		<footer>
+			<h2>Sources</h2>
+			<ol>
+				<li><a href="http://www.stackoverflow.com/questions/4781077/html5-best-practices-section-header-aside-article-tags">www.stackoverflow</a></li>
+				<li><a href="http://www.html5doctor.com/the-section-element/">www.html5doctor</a></li>
+			</ol>
+		</footer>	
+		<script>
+		//Example 1	/*This works.*/	
+			document.getElementById("button").addEventListener('click', changeFont, false);	
+			function changeFont() {
+				document.getElementById("change").setAttribute("class", "green");
+				alert("This is a green sans-serif font!");							
+				}
+				
+		//Example 2		NOTE: This also works.
+			/*(function(){   
+				var btn = document.getElementById("button");
+				btn.addEventListener("click", function(){
+				document.getElementById("change").setAttribute("class", "green");
+				alert('Font is changed.');
+			
+				}, false);
+		    })();*/	
+		    
+		//Example 3  NOTE: Doesn't work.
+		  
+		    /*save the two nodes to variables*/
+		    //var btn = document.getElementById("button"),
+		    //    p = document.getElementById("change");
+		        
+		    /*define what we want to do in a function*/	
+		   // function colorChange(){
+		    //	p.setAttribute("class", "green");
+		  //  }
+		    
+		    /*run the function when the button is clicked*/    
+		   // btn.addEventListener("click", "colorChange", false);
+		    	    
+		</script>	
+		<!--<script>		NOTE:	This jQuery doesn't work.
+			$("button").click(function(){
+  				$("p").addClass("green");
+  			});
+  		</script>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+
+ 	  </div><!--end #wrapper div-->
+	</body>
+</html>	

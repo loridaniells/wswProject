@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><!--Resource:  http://arukor.com/About/ArukorPartners/jQueryJam.aspx-->
+	<head>
+        <title>jQuery </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Sams Teach Yourself jQuery Mobile in 24 Hours - Hour 3 Exercise 3, Animate">
+		<meta name="author" content="Lori Daniells">        
+        <style type="text/css">
+        	body {
+        		margin: 0px;
+        		padding: 0px;
+        		background-color: #fed75b;
+        	}
+        	
+        	#wrapper {
+        		margin: 0 auto;
+        		width: 80%;
+        		background-color: #1faddf;
+        		position: absolute:
+        		top: 0px;
+        		padding: 20px;
+        		box-shadow: 10px 10px;
+        		-moz-box-shadow: -5px -5px 5px #343d7a;
+				-webkit-box-shadow: -5px -5px 5px #343d7a;
+				box-shadow: -5px -5px 5px #343d7a;
+        	}
+        	
+        	#clickme {
+        		position: relative;
+        		/*width: 100%;*/
+        		margin: 0;
+        		padding: 0 0 20px 20px;
+   				font: italic small-caps normal 16px/150% Arial, Helvetica, sans-serif;
+        	}
+        	
+        	#book {
+        		position: relative;
+        		left: 20px;
+        		margin-top: 30px;
+        		padding: 1px;
+        		border: black solid 2px;
+				-moz-box-shadow: 0 0 5px 5px #343d7a;
+				-webkit-box-shadow: 0 0 5px 5px #343d7a;
+				box-shadow: 0 0 5px 5px #343d7a;
+        	}
+        	
+        	#cat {
+        		position: relative;
+        		padding: 20px;
+        	}
+        	
+        	#catbox{
+        		width: 500px
+        		height: 500px;
+        	
+        	}
+        	
+        	#bookbox {
+        		width: 400px;
+        		height: 400px;
+        	
+        	}
+        
+        </style>
+	</head>
+	<body>
+        <div id="wrapper">
+            <div id="catbox">
+			<img id="cat" src="../images/z-cat2_d.gif" alt="cat" title="click me" value="Click the cat">
+			<!--http://www.cybergata.com/anim.htm-->
+			<!--http://bestanimations.com/Animals/Mammals/Cats/Cat-03-june2.gif-->
+			</div>
+			<p id="clickme">Click Here, the Cat and the Book</p>
+			<div id="bookbox">
+			<img id="book" src="../images/book_sm.png" alt="jQuery jAM in 24 Hours Book"  />
+			</div>
+
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$('#cat, #clickme').click(function() {
+  				$('#book').animate( {left: '+=50', height: 'toggle'},
+   				3000, function() {
+    				// Animation complete..outerWidth([width], [includeMargin]){ outerWidth: 500 }  {'left': '-'+$(this).parent().width()},
+  				});
+			});
+	
+			$('#cat, #book').click(function() {
+  				$('#cat #clickme').animate( {left: '+=400', $(this).innerWidth(), top: '350'},
+   				1000, function() {
+    				// Animation complete.
+  				});
+			});//problem with animation going off screen. how to limit animation to the browser window?	
+			
+		</script>
+	</body>
+</html>
+
+
